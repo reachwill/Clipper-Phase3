@@ -3,9 +3,10 @@ import { Search } from './search.component2';
 import {BigRedButton} from './bigred.component';
 import {YTPlayer} from './ytplayer.component';
 import {Social} from './social.component';
+import {CopyBox} from './copybox.component';
 @Component({
   selector: 'my-editor',
-  directives: [Search,YTPlayer,BigRedButton,Social],
+  directives: [Search,YTPlayer,BigRedButton,Social,CopyBox],
   template: `
     
     
@@ -15,22 +16,28 @@ import {Social} from './social.component';
     </div>
     
     <yt-player></yt-player>
-    <search id="searchBox" (^click)="searchResultClicked($event)" (resultClicked)="searchResultClicked($event)"></search>
+    <copy-box [shareURL]="_shareURL" [shareURLIsReady]="_shareURLIsReady"></copy-box>
     <social [shareURL]="_shareURL"></social>
+    
+    <search id="searchBox" (^click)="searchResultClicked($event)" (resultClicked)="searchResultClicked($event)"></search>
+    
      
    `
 
 })
 export class Editor {
-   constructor() {
-        console.log('editor created');
-        
-   }
-    
     _vidURL:string;
     _start:string;
     _end:string;
     _shareURL:string;
+    _shareURLIsReady:string;
+    
+   constructor() {
+        console.log('editor created');
+        this._shareURLIsReady = false;
+   }
+    
+    
     
     toggleSearch(event){
         event.preventDefault();
@@ -46,12 +53,17 @@ export class Editor {
             this._end = 'end=' + Math.round(videojs('#player').currentTime());
         }
         this._shareURL = this._vidURL + this._start + '&' + this._end +'&version=3.0';
-        console.log(this._shareURL);
+       // console.log(this._shareURL);
+       if(this._shareURL.search("undefined")>-1){
+           this._shareURLIsReady = false;
+       }else{
+           this._shareURLIsReady = true;
+       }
        
     }
     
      searchResultClicked(event){
-        console.log(event.id)
+        //console.log(event.id)
         videojs('#player').src({"src":"https://www.youtube.com/watch?v="+event.id});
         videojs('#player').play();
         //record current video url in public vidURL var ready with & for start end params

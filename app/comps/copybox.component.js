@@ -1,4 +1,4 @@
-System.register(['angular2/core', './ytplayer.component'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,38 @@ System.register(['angular2/core', './ytplayer.component'], function(exports_1, c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, ytplayer_component_1;
-    var Consumer;
+    var core_1;
+    var CopyBox;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (ytplayer_component_1_1) {
-                ytplayer_component_1 = ytplayer_component_1_1;
             }],
         execute: function() {
-            Consumer = (function () {
-                function Consumer() {
+            CopyBox = (function () {
+                function CopyBox() {
+                    console.log('copy box created');
                 }
-                Consumer = __decorate([
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', String)
+                ], CopyBox.prototype, "shareURL", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', String)
+                ], CopyBox.prototype, "shareURLIsReady", void 0);
+                CopyBox = __decorate([
                     core_1.Component({
-                        selector: 'my-consumer',
-                        directives: [ytplayer_component_1.YTPlayer],
-                        template: "\n    \n    <yt-player></yt-player>\n   "
+                        selector: 'copy-box',
+                        template: "\n  \n    <input onClick=\"this.select();\" readonly *ngIf=\"shareURLIsReady\" id=\"copy-input\" value=\"{{shareURL}}\">\n    \n  ",
+                        styles: ["\n    \n  "],
                     }), 
                     __metadata('design:paramtypes', [])
-                ], Consumer);
-                return Consumer;
+                ], CopyBox);
+                return CopyBox;
             }());
-            exports_1("Consumer", Consumer);
+            exports_1("CopyBox", CopyBox);
         }
     }
 });
-//# sourceMappingURL=consumer.component.js.map
+//# sourceMappingURL=copybox.component.js.map

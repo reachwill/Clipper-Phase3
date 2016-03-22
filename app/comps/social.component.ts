@@ -117,7 +117,7 @@ import {Component,Input} from 'angular2/core';
 })
 export class Social  {
    
-    @Input() shareURL: string
+    @Input() shareURL: string;
     constructor() {
         console.log('social created');
         //dynamically load social button js script when we know dom list has been created

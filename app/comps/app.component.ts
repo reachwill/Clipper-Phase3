@@ -14,13 +14,11 @@ import {Social} from './social.component';
    `
 ,
    directives: [ROUTER_DIRECTIVES,Social],
-    providers: [
-    ROUTER_PROVIDERS
-    ]
+   providers: [ROUTER_PROVIDERS]
 })
 
 @RouteConfig([
-    {
+  {
     path: '/',
     name: 'Editor',
     component: Editor

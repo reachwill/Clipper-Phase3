@@ -1,4 +1,4 @@
-System.register(['angular2/core', './search.component2', './bigred.component', './ytplayer.component', './social.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './search.component2', './bigred.component', './ytplayer.component', './social.component', './copybox.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, search_component2_1, bigred_component_1, ytplayer_component_1, social_component_1;
+    var core_1, search_component2_1, bigred_component_1, ytplayer_component_1, social_component_1, copybox_component_1;
     var Editor;
     return {
         setters:[
@@ -28,11 +28,15 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
             },
             function (social_component_1_1) {
                 social_component_1 = social_component_1_1;
+            },
+            function (copybox_component_1_1) {
+                copybox_component_1 = copybox_component_1_1;
             }],
         execute: function() {
             Editor = (function () {
                 function Editor() {
                     console.log('editor created');
+                    this._shareURLIsReady = false;
                 }
                 Editor.prototype.toggleSearch = function (event) {
                     event.preventDefault();
@@ -47,10 +51,16 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                         this._end = 'end=' + Math.round(videojs('#player').currentTime());
                     }
                     this._shareURL = this._vidURL + this._start + '&' + this._end + '&version=3.0';
-                    console.log(this._shareURL);
+                    // console.log(this._shareURL);
+                    if (this._shareURL.search("undefined") > -1) {
+                        this._shareURLIsReady = false;
+                    }
+                    else {
+                        this._shareURLIsReady = true;
+                    }
                 };
                 Editor.prototype.searchResultClicked = function (event) {
-                    console.log(event.id);
+                    //console.log(event.id)
                     videojs('#player').src({ "src": "https://www.youtube.com/watch?v=" + event.id });
                     videojs('#player').play();
                     //record current video url in public vidURL var ready with & for start end params
@@ -60,8 +70,8 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                 Editor = __decorate([
                     core_1.Component({
                         selector: 'my-editor',
-                        directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred_component_1.BigRedButton, social_component_1.Social],
-                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player></yt-player>\n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    <social [shareURL]=\"_shareURL\"></social>\n     \n   "
+                        directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred_component_1.BigRedButton, social_component_1.Social, copybox_component_1.CopyBox],
+                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player></yt-player>\n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    \n     \n   "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], Editor);

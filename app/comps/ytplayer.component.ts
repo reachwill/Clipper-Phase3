@@ -35,7 +35,7 @@ export class YTPlayer implements OnInit, OnDestroy {
 
     ngOnInit() {
         console.log('Init - Component initialized')
-
+        
         this.videoJSplayer = videojs(document.getElementById('player'), {}, function() {
             // This is functionally the same as the previous example.
         });

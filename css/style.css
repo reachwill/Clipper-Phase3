@@ -33,6 +33,11 @@ body>section{
     margin: 30px 0;
 }
 
+#copy-input{
+    width:100%;
+    text-align: center;
+}
+
 /********Components*******************************/
 
 /*general style for all video players*/
