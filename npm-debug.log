@@ -1,0 +1,376 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 warn package.json clipper-lite@1.0.0 No description
+5 warn package.json clipper-lite@1.0.0 No repository field.
+6 warn package.json clipper-lite@1.0.0 No README data
+7 verbose install where, deps [ '/usr/local/bin/clipper-lite-1.02',
+7 verbose install   [ 'angular2',
+7 verbose install     'systemjs',
+7 verbose install     'es6-promise',
+7 verbose install     'es6-shim',
+7 verbose install     'reflect-metadata',
+7 verbose install     'rxjs',
+7 verbose install     'zone.js',
+7 verbose install     'concurrently',
+7 verbose install     'lite-server',
+7 verbose install     'typescript',
+7 verbose install     'typings' ] ]
+8 verbose install where, peers [ '/usr/local/bin/clipper-lite-1.02', [] ]
+9 info preinstall clipper-lite@1.0.0
+10 verbose already installed skipping rxjs@5.0.0-beta.2 /usr/local/bin/clipper-lite-1.02
+11 verbose already installed skipping zone.js@0.5.15 /usr/local/bin/clipper-lite-1.02
+12 verbose already installed skipping concurrently@^2.0.0 /usr/local/bin/clipper-lite-1.02
+13 verbose already installed skipping lite-server@^2.1.0 /usr/local/bin/clipper-lite-1.02
+14 verbose already installed skipping typescript@^1.8.7 /usr/local/bin/clipper-lite-1.02
+15 verbose already installed skipping typings@^0.7.5 /usr/local/bin/clipper-lite-1.02
+16 verbose already installed skipping angular2@2.0.0-beta.9 /usr/local/bin/clipper-lite-1.02
+17 verbose already installed skipping systemjs@0.19.24 /usr/local/bin/clipper-lite-1.02
+18 verbose already installed skipping es6-promise@^3.0.2 /usr/local/bin/clipper-lite-1.02
+19 silly cache add args [ 'es6-shim@^0.34.4', null ]
+20 verbose cache add spec es6-shim@^0.34.4
+21 silly cache add parsed spec { raw: 'es6-shim@^0.34.4',
+21 silly cache add   scope: null,
+21 silly cache add   name: 'es6-shim',
+21 silly cache add   rawSpec: '^0.34.4',
+21 silly cache add   spec: '>=0.34.4 <0.35.0',
+21 silly cache add   type: 'range' }
+22 verbose addNamed es6-shim@>=0.34.4 <0.35.0
+23 silly addNamed semver.valid null
+24 silly addNamed semver.validRange >=0.34.4 <0.35.0
+25 silly addNameRange { name: 'es6-shim', range: '>=0.34.4 <0.35.0', hasData: false }
+26 silly mapToRegistry name es6-shim
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry https://registry.npmjs.org/
+29 silly mapToRegistry uri https://registry.npmjs.org/es6-shim
+30 verbose addNameRange registry:https://registry.npmjs.org/es6-shim not in flight; fetching
+31 verbose already installed skipping reflect-metadata@0.1.2 /usr/local/bin/clipper-lite-1.02
+32 verbose request uri https://registry.npmjs.org/es6-shim
+33 verbose request no auth needed
+34 info attempt registry request try #1 at 11:04:14 AM
+35 verbose request id 9fd97696573b7389
+36 verbose etag "EH5WMZZJWYJFAD2EJG6PIP3XE"
+37 http request GET https://registry.npmjs.org/es6-shim
+38 http 304 https://registry.npmjs.org/es6-shim
+39 silly get cb [ 304,
+39 silly get   { date: 'Mon, 21 Mar 2016 11:04:12 GMT',
+39 silly get     via: '1.1 varnish',
+39 silly get     'cache-control': 'max-age=300',
+39 silly get     etag: '"EH5WMZZJWYJFAD2EJG6PIP3XE"',
+39 silly get     age: '0',
+39 silly get     connection: 'keep-alive',
+39 silly get     'x-served-by': 'cache-lcy1127-LCY',
+39 silly get     'x-cache': 'HIT',
+39 silly get     'x-cache-hits': '1',
+39 silly get     'x-timer': 'S1458558252.471952,VS0,VE99',
+39 silly get     vary: 'Accept' } ]
+40 verbose etag https://registry.npmjs.org/es6-shim from cache
+41 verbose get saving es6-shim to /Users/reachwill/.npm/registry.npmjs.org/es6-shim/.cache.json
+42 silly addNameRange number 2 { name: 'es6-shim', range: '>=0.34.4 <0.35.0', hasData: true }
+43 silly addNameRange versions [ 'es6-shim',
+43 silly addNameRange   [ '0.1.0',
+43 silly addNameRange     '0.2.0',
+43 silly addNameRange     '0.2.1',
+43 silly addNameRange     '0.3.0',
+43 silly addNameRange     '0.3.1',
+43 silly addNameRange     '0.4.0',
+43 silly addNameRange     '0.4.1',
+43 silly addNameRange     '0.5.0',
+43 silly addNameRange     '0.5.1',
+43 silly addNameRange     '0.5.2',
+43 silly addNameRange     '0.5.3',
+43 silly addNameRange     '0.6.0',
+43 silly addNameRange     '0.7.0',
+43 silly addNameRange     '0.8.0',
+43 silly addNameRange     '0.9.0',
+43 silly addNameRange     '0.9.1',
+43 silly addNameRange     '0.9.2',
+43 silly addNameRange     '0.9.3',
+43 silly addNameRange     '0.10.0',
+43 silly addNameRange     '0.10.1',
+43 silly addNameRange     '0.11.0',
+43 silly addNameRange     '0.11.1',
+43 silly addNameRange     '0.12.0',
+43 silly addNameRange     '0.13.0',
+43 silly addNameRange     '0.14.0',
+43 silly addNameRange     '0.15.0',
+43 silly addNameRange     '0.15.1',
+43 silly addNameRange     '0.16.0',
+43 silly addNameRange     '0.17.0',
+43 silly addNameRange     '0.18.0',
+43 silly addNameRange     '0.19.0',
+43 silly addNameRange     '0.19.1',
+43 silly addNameRange     '0.19.2',
+43 silly addNameRange     '0.20.0',
+43 silly addNameRange     '0.20.1',
+43 silly addNameRange     '0.20.2',
+43 silly addNameRange     '0.20.3',
+43 silly addNameRange     '0.20.4',
+43 silly addNameRange     '0.21.0',
+43 silly addNameRange     '0.21.1',
+43 silly addNameRange     '0.22.0',
+43 silly addNameRange     '0.22.1',
+43 silly addNameRange     '0.22.2',
+43 silly addNameRange     '0.23.0',
+43 silly addNameRange     '0.24.0',
+43 silly addNameRange     '0.25.0',
+43 silly addNameRange     '0.25.1',
+43 silly addNameRange     '0.25.2',
+43 silly addNameRange     '0.25.3',
+43 silly addNameRange     '0.26.0',
+43 silly addNameRange     '0.26.1',
+43 silly addNameRange     '0.27.1',
+43 silly addNameRange     '0.28.1',
+43 silly addNameRange     '0.29.0',
+43 silly addNameRange     '0.30.0',
+43 silly addNameRange     '0.31.0',
+43 silly addNameRange     '0.31.1',
+43 silly addNameRange     '0.31.2',
+43 silly addNameRange     '0.31.3',
+43 silly addNameRange     '0.32.0',
+43 silly addNameRange     '0.32.1',
+43 silly addNameRange     '0.32.2',
+43 silly addNameRange     '0.33.0',
+43 silly addNameRange     '0.33.1',
+43 silly addNameRange     '0.33.2',
+43 silly addNameRange     '0.33.3',
+43 silly addNameRange     '0.33.4',
+43 silly addNameRange     '0.33.5',
+43 silly addNameRange     '0.33.6',
+43 silly addNameRange     '0.33.7',
+43 silly addNameRange     '0.33.8',
+43 silly addNameRange     '0.33.9',
+43 silly addNameRange     '0.33.10',
+43 silly addNameRange     '0.33.11',
+43 silly addNameRange     '0.33.12',
+43 silly addNameRange     '0.33.13',
+43 silly addNameRange     '0.34.0',
+43 silly addNameRange     '0.34.1',
+43 silly addNameRange     '0.34.2',
+43 silly addNameRange     '0.34.3',
+43 silly addNameRange     '0.34.4',
+43 silly addNameRange     '0.35.0' ] ]
+44 verbose addNamed es6-shim@0.34.4
+45 silly addNamed semver.valid 0.34.4
+46 silly addNamed semver.validRange 0.34.4
+47 silly mapToRegistry name es6-shim
+48 silly mapToRegistry using default registry
+49 silly mapToRegistry registry https://registry.npmjs.org/
+50 silly mapToRegistry uri https://registry.npmjs.org/es6-shim
+51 verbose addRemoteTarball https://registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz not in flight; adding
+52 verbose addRemoteTarball [ 'https://registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz',
+52 verbose addRemoteTarball   'b2f34d85ea0fd577fb2a5016cb978d44c5049969' ]
+53 info retry fetch attempt 1 at 11:04:15 AM
+54 info attempt registry request try #1 at 11:04:15 AM
+55 http fetch GET https://registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz
+56 http fetch 200 https://registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz
+57 silly fetchAndShaCheck shasum b2f34d85ea0fd577fb2a5016cb978d44c5049969
+58 verbose addTmpTarball /var/folders/n9/0mbgmw6j34s4q5sj_0kmq9g00000gn/T/npm-8431-e9dc10cf/registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz not in flight; adding
+59 verbose addTmpTarball already have metadata; skipping unpack for es6-shim@0.34.4
+60 silly cache afterAdd es6-shim@0.34.4
+61 verbose afterAdd /Users/reachwill/.npm/es6-shim/0.34.4/package/package.json not in flight; writing
+62 verbose afterAdd /Users/reachwill/.npm/es6-shim/0.34.4/package/package.json written
+63 silly install resolved [ { name: 'es6-shim',
+63 silly install resolved     version: '0.34.4',
+63 silly install resolved     author: { name: 'Paul Miller', url: 'http://paulmillr.com' },
+63 silly install resolved     description: 'ECMAScript 6 (Harmony) compatibility shims for legacy JavaScript engines',
+63 silly install resolved     keywords:
+63 silly install resolved      [ 'ecmascript',
+63 silly install resolved        'harmony',
+63 silly install resolved        'es6',
+63 silly install resolved        'shim',
+63 silly install resolved        'promise',
+63 silly install resolved        'promises',
+63 silly install resolved        'setPrototypeOf',
+63 silly install resolved        'map',
+63 silly install resolved        'set',
+63 silly install resolved        '__proto__' ],
+63 silly install resolved     homepage: 'https://github.com/paulmillr/es6-shim/',
+63 silly install resolved     license: 'MIT',
+63 silly install resolved     repository: { type: 'git', url: 'git://github.com/paulmillr/es6-shim.git' },
+63 silly install resolved     main: 'es6-shim',
+63 silly install resolved     scripts:
+63 silly install resolved      { test: 'npm run lint && evalmd *.md && npm run tests-only',
+63 silly install resolved        'tests-only': 'npm run test:shim && npm run test:sham',
+63 silly install resolved        'test:shim': 'mocha test/*.js test/*/*.js',
+63 silly install resolved        'test:sham': 'mocha test-sham/*.js',
+63 silly install resolved        'test:native': 'NO_ES6_SHIM=1 npm run tests-only',
+63 silly install resolved        lint: 'npm run lint:shim && npm run lint:sham',
+63 silly install resolved        'lint:shim': 'npm run jshint:shim && npm run jscs:shim && npm run eslint:shim',
+63 silly install resolved        'lint:sham': 'npm run jshint:sham && npm run jscs:sham && npm run eslint:sham',
+63 silly install resolved        eslint: 'npm run eslint:shim && npm run eslint:sham',
+63 silly install resolved        'eslint:shim': 'eslint es6-shim.js test/*.js test/*/*.js',
+63 silly install resolved        'eslint:sham': 'eslint es6-sham.js test-sham/*.js',
+63 silly install resolved        jshint: 'npm run jshint:shim && npm run jshint:sham',
+63 silly install resolved        'jshint:shim': 'jshint es6-shim.js test/*.js test/*/*.js',
+63 silly install resolved        'jshint:sham': 'jshint es6-sham.js test-sham/*.js',
+63 silly install resolved        jscs: 'npm run jscs:shim && npm run jscs:sham',
+63 silly install resolved        'jscs:shim': 'jscs es6-shim.js test/*.js test/*/*.js',
+63 silly install resolved        'jscs:sham': 'jscs es6-sham.js test-sham/*.js',
+63 silly install resolved        minify: 'npm run minify:shim && npm run minify:sham',
+63 silly install resolved        'minify:shim': 'uglifyjs es6-shim.js --keep-fnames --comments --source-map=es6-shim.map -m -b ascii_only=true,beautify=false > es6-shim.min.js',
+63 silly install resolved        'minify:sham': 'uglifyjs es6-sham.js --keep-fnames --comments --source-map=es6-sham.map -m -b ascii_only=true,beautify=false > es6-sham.min.js',
+63 silly install resolved        'sauce-connect': 'curl -L https://gist.githubusercontent.com/henrikhodne/9322897/raw/sauce-connect.sh | bash && export TRAVIS_SAUCE_CONNECT=true',
+63 silly install resolved        sauce: 'npm run sauce-connect && grunt sauce' },
+63 silly install resolved     testling: { html: 'testling.html', browsers: [Object] },
+63 silly install resolved     dependencies: {},
+63 silly install resolved     devDependencies:
+63 silly install resolved      { chai: '^3.5.0',
+63 silly install resolved        'es5-shim': '^4.5.2',
+63 silly install resolved        eslint: '^1.10.3',
+63 silly install resolved        '@ljharb/eslint-config': '^1.6.1',
+63 silly install resolved        grunt: '^0.4.5',
+63 silly install resolved        'grunt-contrib-connect': '^0.11.2',
+63 silly install resolved        'grunt-contrib-watch': '^0.6.1',
+63 silly install resolved        'grunt-saucelabs': '^8.6.2',
+63 silly install resolved        jscs: '^2.9.0',
+63 silly install resolved        jshint: '^2.9.1',
+63 silly install resolved        mocha: '^2.4.5',
+63 silly install resolved        'promises-aplus-tests': '^2.1.1',
+63 silly install resolved        'promises-es6-tests': '^0.5.0',
+63 silly install resolved        'uglify-js': '^2.6.1',
+63 silly install resolved        evalmd: '^0.0.16' },
+63 silly install resolved     gitHead: '9439339247a2d9dbaf602bc055d2a5b7c409559f',
+63 silly install resolved     bugs: { url: 'https://github.com/paulmillr/es6-shim/issues' },
+63 silly install resolved     _id: 'es6-shim@0.34.4',
+63 silly install resolved     _shasum: 'b2f34d85ea0fd577fb2a5016cb978d44c5049969',
+63 silly install resolved     _from: 'es6-shim@>=0.34.4 <0.35.0',
+63 silly install resolved     _npmVersion: '3.3.12',
+63 silly install resolved     _nodeVersion: '5.5.0',
+63 silly install resolved     _npmUser: { name: 'ljharb', email: 'ljharb@gmail.com' },
+63 silly install resolved     dist:
+63 silly install resolved      { shasum: 'b2f34d85ea0fd577fb2a5016cb978d44c5049969',
+63 silly install resolved        tarball: 'http://registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz' },
+63 silly install resolved     maintainers: [ [Object], [Object] ],
+63 silly install resolved     _npmOperationalInternal:
+63 silly install resolved      { host: 'packages-6-west.internal.npmjs.com',
+63 silly install resolved        tmp: 'tmp/es6-shim-0.34.4.tgz_1455055045052_0.8445700975134969' },
+63 silly install resolved     directories: {},
+63 silly install resolved     _resolved: 'https://registry.npmjs.org/es6-shim/-/es6-shim-0.34.4.tgz' } ]
+64 info install es6-shim@0.34.4 into /usr/local/bin/clipper-lite-1.02
+65 info installOne es6-shim@0.34.4
+66 verbose installOne of es6-shim to /usr/local/bin/clipper-lite-1.02 not in flight; installing
+67 verbose lock using /Users/reachwill/.npm/_locks/es6-shim-0788ec484b6874de.lock for /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+68 silly install write writing es6-shim 0.34.4 to /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+69 silly cache addNamed cb es6-shim@0.34.4
+70 verbose unbuild node_modules/es6-shim
+71 info preuninstall es6-shim@0.33.13
+72 info uninstall es6-shim@0.33.13
+73 verbose unbuild rmStuff es6-shim@0.33.13 from /usr/local/bin/clipper-lite-1.02/node_modules
+74 info postuninstall es6-shim@0.33.13
+75 verbose gentlyRm vacuuming /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+76 silly gentlyRm purging /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+77 silly gentlyRm quitting because other entries in /usr/local/bin/clipper-lite-1.02/node_modules
+78 verbose tar unpack /Users/reachwill/.npm/es6-shim/0.34.4/package.tgz
+79 verbose tar unpacking to /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+80 verbose gentlyRm vacuuming /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+81 silly gunzTarPerm modes [ '755', '644' ]
+82 silly gunzTarPerm extractEntry package.json
+83 silly gunzTarPerm extractEntry .npmignore
+84 silly gunzTarPerm extractEntry README.md
+85 silly gunzTarPerm extractEntry LICENSE
+86 silly gunzTarPerm extractEntry es6-sham.js
+87 silly gunzTarPerm extractEntry Gruntfile.js
+88 silly gunzTarPerm extractEntry es6-sham.min.js
+89 silly gunzTarPerm extractEntry es6-shim.js
+90 silly gunzTarPerm extractEntry es6-shim.min.js
+91 silly gunzTarPerm extractEntry .jscs.json
+92 silly gunzTarPerm extractEntry .jshintrc
+93 silly gunzTarPerm extractEntry bower.json
+94 silly gunzTarPerm extractEntry component.json
+95 silly gunzTarPerm extractEntry .eslintrc
+96 silly gunzTarPerm extractEntry es6-sham.map
+97 silly gunzTarPerm extractEntry .eslintignore
+98 silly gunzTarPerm extractEntry es6-shim.map
+99 silly gunzTarPerm extractEntry CHANGELOG.md
+100 silly gunzTarPerm extractEntry full.html
+101 silly gunzTarPerm extractEntry min.html
+102 silly gunzTarPerm extractEntry test-sham/set-prototype-of.js
+103 silly gunzTarPerm extractEntry test-sham/index.html
+104 silly gunzTarPerm extractEntry test/array.js
+105 silly gunzTarPerm extractEntry test/test_helpers.js
+106 silly gunzTarPerm extractEntry test/json.js
+107 silly gunzTarPerm extractEntry test/map.js
+108 silly gunzTarPerm extractEntry test/math.js
+109 silly gunzTarPerm extractEntry test/date.js
+110 silly gunzTarPerm extractEntry test/set.js
+111 silly gunzTarPerm extractEntry test/browser-onload.js
+112 silly gunzTarPerm extractEntry test/object.js
+113 silly gunzTarPerm extractEntry test/regexp.js
+114 silly gunzTarPerm extractEntry test/promise.js
+115 silly gunzTarPerm extractEntry test/browser-setup.js
+116 silly gunzTarPerm extractEntry test/reflect.js
+117 silly gunzTarPerm extractEntry test/string.js
+118 silly gunzTarPerm extractEntry test/worker-test.js
+119 silly gunzTarPerm extractEntry test/number.js
+120 silly gunzTarPerm extractEntry test/promise/all.js
+121 silly gunzTarPerm extractEntry test/promise/evil-promises.js
+122 silly gunzTarPerm extractEntry test/promise/promises-aplus.js
+123 silly gunzTarPerm extractEntry test/promise/promises-es6.js
+124 silly gunzTarPerm extractEntry test/promise/race.js
+125 silly gunzTarPerm extractEntry test/promise/reject.js
+126 silly gunzTarPerm extractEntry test/promise/resolve.js
+127 silly gunzTarPerm extractEntry test/promise/simple.js
+128 silly gunzTarPerm extractEntry test/promise/subclass.js
+129 silly gunzTarPerm extractEntry test/native.html
+130 silly gunzTarPerm extractEntry test/mocha.opts
+131 silly gunzTarPerm extractEntry test/index.html
+132 silly gunzTarPerm extractEntry test/worker-runner.workerjs
+133 info preinstall es6-shim@0.34.4
+134 silly install resolved []
+135 verbose about to build /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+136 info build /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+137 verbose linkStuff [ false,
+137 verbose linkStuff   false,
+137 verbose linkStuff   false,
+137 verbose linkStuff   '/usr/local/bin/clipper-lite-1.02/node_modules' ]
+138 info linkStuff es6-shim@0.34.4
+139 verbose linkBins es6-shim@0.34.4
+140 verbose linkMans es6-shim@0.34.4
+141 verbose rebuildBundles es6-shim@0.34.4
+142 info install es6-shim@0.34.4
+143 info postinstall es6-shim@0.34.4
+144 verbose unlock done using /Users/reachwill/.npm/_locks/es6-shim-0788ec484b6874de.lock for /usr/local/bin/clipper-lite-1.02/node_modules/es6-shim
+145 info build /usr/local/bin/clipper-lite-1.02
+146 verbose linkStuff [ false, false, false, '/usr/local/bin' ]
+147 info linkStuff clipper-lite@1.0.0
+148 verbose linkBins clipper-lite@1.0.0
+149 verbose linkMans clipper-lite@1.0.0
+150 verbose rebuildBundles clipper-lite@1.0.0
+151 verbose rebuildBundles [ '.bin',
+151 verbose rebuildBundles   'angular2',
+151 verbose rebuildBundles   'concurrently',
+151 verbose rebuildBundles   'es6-promise',
+151 verbose rebuildBundles   'es6-shim',
+151 verbose rebuildBundles   'lite-server',
+151 verbose rebuildBundles   'reflect-metadata',
+151 verbose rebuildBundles   'rxjs',
+151 verbose rebuildBundles   'systemjs',
+151 verbose rebuildBundles   'typescript',
+151 verbose rebuildBundles   'typings',
+151 verbose rebuildBundles   'zone.js' ]
+152 info install clipper-lite@1.0.0
+153 info postinstall clipper-lite@1.0.0
+154 verbose unsafe-perm in lifecycle true
+155 info prepublish clipper-lite@1.0.0
+156 verbose stack Error: The package es6-shim does not satisfy its siblings' peerDependencies requirements!
+156 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:103:32
+156 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:225:5
+156 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+156 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+156 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+156 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+156 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+156 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+156 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+156 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+157 verbose cwd /usr/local/bin/clipper-lite-1.02
+158 error Darwin 14.3.0
+159 error argv "node" "/usr/local/bin/npm" "install"
+160 error node v0.12.0
+161 error npm  v2.5.1
+162 error code EPEERINVALID
+163 error peerinvalid The package es6-shim does not satisfy its siblings' peerDependencies requirements!
+163 error peerinvalid Peer angular2@2.0.0-beta.9 wants es6-shim@^0.33.3
+164 verbose exit [ 1, true ]
