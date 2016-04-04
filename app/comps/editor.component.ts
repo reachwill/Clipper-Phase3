@@ -15,7 +15,7 @@ import {CopyBox} from './copybox.component';
         <big-red-button (clicked)="bigRedClicked($event)"></big-red-button>
     </div>
     
-    <yt-player></yt-player>
+    <yt-player #movieplayer></yt-player>
     <copy-box [shareURL]="_shareURL" [shareURLIsReady]="_shareURLIsReady"></copy-box>
     <social [shareURL]="_shareURL"></social>
     
@@ -46,6 +46,7 @@ export class Editor {
     
     
     bigRedClicked(event){ 
+        $('#moveiplayer').loadVideo();
         $('.player-container').toggleClass('red');
         if($('.player-container').hasClass('red')){
             this._start = 'start=' + Math.round(videojs('#player').currentTime());

@@ -43,6 +43,7 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                     $('#searchBox').toggle();
                 };
                 Editor.prototype.bigRedClicked = function (event) {
+                    $('#moveiplayer').loadVideo();
                     $('.player-container').toggleClass('red');
                     if ($('.player-container').hasClass('red')) {
                         this._start = 'start=' + Math.round(videojs('#player').currentTime());
@@ -71,7 +72,7 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                     core_1.Component({
                         selector: 'my-editor',
                         directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred_component_1.BigRedButton, social_component_1.Social, copybox_component_1.CopyBox],
-                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player></yt-player>\n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    \n     \n   "
+                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player #movieplayer></yt-player>\n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    \n     \n   "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], Editor);
