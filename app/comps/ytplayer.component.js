@@ -20,6 +20,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             YTPlayer = (function () {
                 function YTPlayer(elementRef) {
+                    this._videoURL = 'https://www.youtube.com/watch?v=PaOYzsZdt5c';
                     this._elementRef = elementRef;
                 }
                 YTPlayer.prototype.ngOnInit = function () {

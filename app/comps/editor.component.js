@@ -36,29 +36,34 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
             Editor = (function () {
                 function Editor() {
                     console.log('editor created');
+                    //set flag to check if _shareURLIsReady is worth sharing
                     this._shareURLIsReady = false;
                 }
                 Editor.prototype.toggleSearch = function (event) {
                     event.preventDefault();
+                    //hide / show searchBox component
                     $('#searchBox').toggle();
                 };
                 Editor.prototype.bigRedClicked = function (event) {
-                    $('#moveiplayer').loadVideo();
+                    //$('#moveiplayer').loadVideo();
+                    //toggle class to visually show state of recording start / end times
                     $('.player-container').toggleClass('red');
+                    //depending on red class active either modify start time or end time
                     if ($('.player-container').hasClass('red')) {
                         this._start = 'start=' + Math.round(videojs('#player').currentTime());
                     }
                     else {
                         this._end = 'end=' + Math.round(videojs('#player').currentTime());
                     }
-                    this._shareURL = this._vidURL + this._start + '&' + this._end + '&version=3.0';
-                    // console.log(this._shareURL);
+                    this._shareURL = 'http://localhost:3000/consumer?id=' + this._vidId + this._start + '&' + this._end + '&version=3.0';
+                    // check if _shareURLIsReady is worth showing (i.e. is anything still undefined)
                     if (this._shareURL.search("undefined") > -1) {
                         this._shareURLIsReady = false;
                     }
                     else {
                         this._shareURLIsReady = true;
                     }
+                    console.log(this._shareURL);
                 };
                 Editor.prototype.searchResultClicked = function (event) {
                     //console.log(event.id)
@@ -66,6 +71,9 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                     videojs('#player').play();
                     //record current video url in public vidURL var ready with & for start end params
                     this._vidURL = videojs('#player').src().src + '&';
+                    //record the unique id of th video
+                    this._vidId = this._vidURL.substr(this._vidURL.lastIndexOf('?') + 3);
+                    // toggle visiblity of searchBox component
                     $('#searchBox').fadeToggle();
                 };
                 Editor = __decorate([

@@ -51,7 +51,7 @@ System.register(['angular2/core', 'angular2/common', './youtube-api/youtube', 'r
                     core_1.Component({
                         selector: 'search',
                         providers: [youtube_1.YouTubeAPI],
-                        template: "\n    <input [ngFormControl]=\"search\" placeholder=\"search\">\n    <ul>\n            <li  *ngFor=\"#video of results | async\">\n                <a  href=\"#\" data-id=\"{{video.id.videoId}}\" (click)=\"itemClicked($event)\">\n                    <h3>{{video.snippet.title}}</h3>\n                    <p>{{video.snippet.description}}</p>\n                    <img [src]=\"video.snippet.thumbnails.default.url\"/>\n                </a>\n            </li>\n       \n    </ul>\n  ",
+                        template: "\n    <input [ngFormControl]=\"search\" placeholder=\"search\" value=\"eyhTxuMcYic\">\n    <ul>\n            <li  *ngFor=\"#video of results | async\">\n                <a  href=\"#\" data-id=\"{{video.id.videoId}}\" (click)=\"itemClicked($event)\">\n                    <h3>{{video.snippet.title}}</h3>\n                    <p>{{video.snippet.description}}</p>\n                    <img [src]=\"video.snippet.thumbnails.default.url\"/>\n                </a>\n            </li>\n       \n    </ul>\n  ",
                         styles: ["\n    \n  "],
                     }), 
                     __metadata('design:paramtypes', [youtube_1.YouTubeAPI])
