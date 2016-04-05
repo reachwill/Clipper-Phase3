@@ -36,7 +36,7 @@ System.register(['angular2/core', 'angular2/router', './editor.component', './co
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n   <div id=\"top-bar\"></div>\n   <a [routerLink]=\"['Editor']\">Editor</a>\n   <a [routerLink]=\"['Consumer']\">Consumer</a>\n   <router-outlet></router-outlet>\n   \n   ",
+                        template: "\n   <div id=\"top-bar\"></div>\n   <a [routerLink]=\"['Editor']\">Editor</a>\n   \n   <router-outlet></router-outlet>\n   \n   ",
                         directives: [router_1.ROUTER_DIRECTIVES, social_component_1.Social],
                         providers: [router_1.ROUTER_PROVIDERS]
                     }),

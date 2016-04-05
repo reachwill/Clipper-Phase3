@@ -8,7 +8,7 @@ import {Social} from './social.component';
   template: `
    <div id="top-bar"></div>
    <a [routerLink]="['Editor']">Editor</a>
-   <a [routerLink]="['Consumer']">Consumer</a>
+   
    <router-outlet></router-outlet>
    
    `

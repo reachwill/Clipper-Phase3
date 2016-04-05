@@ -25,20 +25,16 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 }
                 YTConsumerPlayer.prototype.urlClicked = function ($event) {
                     console.log("https://www.youtube.com/watch?v=" + this.vidId);
-                    videojs('#player').src({ "src": "https://www.youtube.com/watch?v=" + this.vidId });
-                    videojs('#player').currentTime(Number(this.start));
-                    videojs('#player').play();
+                };
+                YTConsumerPlayer.prototype.ngAfterViewInit = function () {
+                    console.log('Init - Component View initialized ' + this.vidId);
                 };
                 YTConsumerPlayer.prototype.ngOnInit = function () {
                     console.log('Init - Component initialized ' + this.vidId);
-                    this.videoJSplayer = videojs(document.getElementById('player'), {}, function () {
-                    });
-                    videojs('#player').src({ "src": "https://www.youtube.com/watch?v=" + this.vidId });
-                    videojs('#player').play();
                 };
                 YTConsumerPlayer.prototype.ngOnDestroy = function () {
                     console.log('Deinit - Destroyed Component');
-                    this.videoJSplayer.dispose();
+                    //this.videoJSplayer.dispose();
                 };
                 YTConsumerPlayer.prototype.loadVideo = function () {
                     console.log('load video');
@@ -58,8 +54,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 YTConsumerPlayer = __decorate([
                     core_1.Component({
                         selector: 'yt-consumer-player',
-                        template: "\n  <button id=\"playBtn\" (click)=\"urlClicked($event)\">{{vidId}}</button>\n  <div class=\"player-container\">\n    <video\n        id=\"player\"\n        class=\"video-js vjs-default-skin\"\n        controls \n        width=\"640\" height=\"264\"\n        poster=\"media/clipper-logo-play-hires\" \n        data-setup='{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"https://www.youtube.com/watch?v=PaOYzsZdt5c\"}] }'\n    >\n    </video>\n    \n  </div>\n  ",
-                        styles: ["\n    .player-dimensions{\n        width:100%;/*override videojs style which fixed width at 640px*/\n        max-width:640px;\n        margin:0 auto;\n    }\n  "],
+                        template: "\n  <div id=\"bas\">\n    <iframe id=\"player\" type=\"text/html\" width=\"640\" height=\"390\"\n  src=\"http://www.youtube.com/embed/{{vidId}}?enablejsapi=1&start={{start}}&end={{end}}&autoplay=1\"\n  frameborder=\"0\"></iframe>\n  </div>\n  ",
+                        styles: [],
                     }), 
                     __metadata('design:paramtypes', [core_1.ElementRef])
                 ], YTConsumerPlayer);
