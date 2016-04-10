@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, OnDestroy} from 'angular2/core';
+import {Component, ElementRef, OnInit, OnDestroy, Input} from 'angular2/core';
 
 @Component({
   selector: 'yt-player',
@@ -32,6 +32,7 @@ export class YTPlayer implements OnInit, OnDestroy {
     public _videoURL:string = 'https://www.youtube.com/watch?v=PaOYzsZdt5c';
     
     
+    @Input() vidId: string;
     constructor(elementRef: ElementRef) {
         this._elementRef = elementRef;
     }
@@ -41,7 +42,24 @@ export class YTPlayer implements OnInit, OnDestroy {
         
         this.videoJSplayer = videojs(document.getElementById('player'), {}, function() {
             // This is functionally the same as the previous example.
+            alert('one')
         });
+    }
+    
+     ngAfterViewInit() {
+        console.log('Init - Component View initialized ');
+        
+       
+        
+        if(this.vidId!=undefined){
+            this.videoJSplayer.src('http://www.youtube.com/embed/'+this.vidId) 
+            alert('two')  
+        }
+        
+       // window.int=setInterval(function(){console.log(videojs('#player').readyState())},1000) 
+
+       
+        
     }
 
     ngOnDestroy() {

@@ -28,7 +28,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 };
                 YTConsumerPlayer.prototype.ngAfterViewInit = function () {
                     console.log('Init - Component View initialized ' + this.vidId);
-                    //System.import('../vendors/youtubeConsumer.js').then(alert('cunt');
                 };
                 YTConsumerPlayer.prototype.ngOnInit = function () {
                     console.log('Init - Component initialized ' + this.vidId);
@@ -55,7 +54,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 YTConsumerPlayer = __decorate([
                     core_1.Component({
                         selector: 'yt-consumer-player',
-                        template: "\n  <div id=\"player\"> </div>\n  ",
+                        template: "\n  <div id=\"bas\">\n    <iframe id=\"player\" type=\"text/html\" width=\"640\" height=\"390\"\n  src=\"http://www.youtube.com/embed/{{vidId}}?enablejsapi=1&start={{start}}&end={{end}}&autoplay=1\"\n  frameborder=\"0\"></iframe>\n  </div>\n  ",
                         styles: [],
                     }), 
                     __metadata('design:paramtypes', [core_1.ElementRef])
@@ -66,4 +65,4 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=ytplayer.consumer.component.js.map
+//# sourceMappingURL=SIMPLEytplayer.consumer.component.js.map

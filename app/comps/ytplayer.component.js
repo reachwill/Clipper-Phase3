@@ -27,7 +27,16 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     console.log('Init - Component initialized');
                     this.videoJSplayer = videojs(document.getElementById('player'), {}, function () {
                         // This is functionally the same as the previous example.
+                        alert('one');
                     });
+                };
+                YTPlayer.prototype.ngAfterViewInit = function () {
+                    console.log('Init - Component View initialized ');
+                    if (this.vidId != undefined) {
+                        this.videoJSplayer.src('http://www.youtube.com/embed/' + this.vidId);
+                        alert('two');
+                    }
+                    // window.int=setInterval(function(){console.log(videojs('#player').readyState())},1000) 
                 };
                 YTPlayer.prototype.ngOnDestroy = function () {
                     console.log('Deinit - Destroyed Component');
@@ -36,6 +45,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 YTPlayer.prototype.loadVideo = function () {
                     console.log('load video');
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', String)
+                ], YTPlayer.prototype, "vidId", void 0);
                 YTPlayer = __decorate([
                     core_1.Component({
                         selector: 'yt-player',

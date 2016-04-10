@@ -15,7 +15,7 @@ import {CopyBox} from './copybox.component';
         <big-red-button (clicked)="bigRedClicked($event)"></big-red-button>
     </div>
     
-    <yt-player #movieplayer></yt-player>
+    <yt-player [vidId]="_vidId" #movieplayer></yt-player>
     <copy-box [shareURL]="_shareURL" [shareURLIsReady]="_shareURLIsReady"></copy-box>
     <social [shareURL]="_shareURL"></social>
     
@@ -38,6 +38,7 @@ export class Editor {
         console.log('editor created');
         //set flag to check if _shareURLIsReady is worth sharing
         this._shareURLIsReady = false;
+        this._vidId = this.getQueryStringValue('id');
    }
     
     
@@ -80,4 +81,8 @@ export class Editor {
         // toggle visiblity of searchBox component
         $('#searchBox').fadeToggle();
     }
+    
+    getQueryStringValue (key) {  
+        return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+    } 
 }

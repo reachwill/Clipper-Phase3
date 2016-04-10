@@ -4,7 +4,11 @@ import {Component, ElementRef, OnInit, OnDestroy, Input} from 'angular2/core';
   selector: 'yt-consumer-player',
 
   template:`
-  <div id="player"> </div>
+  <div id="bas">
+    <iframe id="player" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/{{vidId}}?enablejsapi=1&start={{start}}&end={{end}}&autoplay=1"
+  frameborder="0"></iframe>
+  </div>
   `,
   styles:[],
   
@@ -30,7 +34,6 @@ export class YTConsumerPlayer implements OnInit, OnDestroy {
     
     ngAfterViewInit() {
         console.log('Init - Component View initialized ' + this.vidId);
-         //System.import('../vendors/youtubeConsumer.js').then(alert('cunt');
     }
     
    

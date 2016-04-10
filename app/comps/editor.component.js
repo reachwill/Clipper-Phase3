@@ -38,6 +38,7 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                     console.log('editor created');
                     //set flag to check if _shareURLIsReady is worth sharing
                     this._shareURLIsReady = false;
+                    this._vidId = this.getQueryStringValue('id');
                 }
                 Editor.prototype.toggleSearch = function (event) {
                     event.preventDefault();
@@ -76,11 +77,14 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                     // toggle visiblity of searchBox component
                     $('#searchBox').fadeToggle();
                 };
+                Editor.prototype.getQueryStringValue = function (key) {
+                    return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+                };
                 Editor = __decorate([
                     core_1.Component({
                         selector: 'my-editor',
                         directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred_component_1.BigRedButton, social_component_1.Social, copybox_component_1.CopyBox],
-                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player #movieplayer></yt-player>\n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    \n     \n   "
+                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player [vidId]=\"_vidId\" #movieplayer></yt-player>\n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    \n     \n   "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], Editor);
