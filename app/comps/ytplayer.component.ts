@@ -42,7 +42,7 @@ export class YTPlayer implements OnInit, OnDestroy {
         
         this.videoJSplayer = videojs(document.getElementById('player'), {}, function() {
             // This is functionally the same as the previous example.
-            alert('one')
+           
         });
     }
     
@@ -53,7 +53,7 @@ export class YTPlayer implements OnInit, OnDestroy {
         
         if(this.vidId!=undefined){
             this.videoJSplayer.src('http://www.youtube.com/embed/'+this.vidId) 
-            alert('two')  
+           
         }
         
        // window.int=setInterval(function(){console.log(videojs('#player').readyState())},1000) 

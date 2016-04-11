@@ -1,4 +1,4 @@
-System.register(['angular2/core', './search.component2', './bigred.component', './ytplayer.component', './social.component', './copybox.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './search.component2', './bigred2.component', './ytplayer.component', './social.component', './copybox.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, search_component2_1, bigred_component_1, ytplayer_component_1, social_component_1, copybox_component_1;
+    var core_1, search_component2_1, bigred2_component_1, ytplayer_component_1, social_component_1, copybox_component_1;
     var Editor;
     return {
         setters:[
@@ -20,8 +20,8 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
             function (search_component2_1_1) {
                 search_component2_1 = search_component2_1_1;
             },
-            function (bigred_component_1_1) {
-                bigred_component_1 = bigred_component_1_1;
+            function (bigred2_component_1_1) {
+                bigred2_component_1 = bigred2_component_1_1;
             },
             function (ytplayer_component_1_1) {
                 ytplayer_component_1 = ytplayer_component_1_1;
@@ -34,16 +34,68 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
             }],
         execute: function() {
             Editor = (function () {
-                function Editor() {
+                function Editor(ref) {
                     console.log('editor created');
                     //set flag to check if _shareURLIsReady is worth sharing
                     this._shareURLIsReady = false;
                     this._vidId = this.getQueryStringValue('id');
+                    this._ref = ref;
                 }
+                Editor.prototype.everyFiveSeconds = function () { console.log('five seconds'); };
                 Editor.prototype.toggleSearch = function (event) {
                     event.preventDefault();
                     //hide / show searchBox component
                     $('#searchBox').toggle();
+                };
+                Editor.prototype.recordBtnClicked = function (event) {
+                    console.log('record');
+                    //toggle class to visually show state of recording start / end times
+                    $('.player-container').toggleClass('red');
+                    //depending on red class active either modify start time or end time
+                    if ($('.player-container').hasClass('red')) {
+                        this._start = String(videojs('#player').currentTime().toFixed(1));
+                        this._int = setInterval(function () {
+                            this._end = String(videojs('#player').currentTime().toFixed(1));
+                            $('#endTime').val(this._end); //temp fix
+                            //this.ref.markForCheck();
+                            console.log(this._end);
+                        }, 100);
+                    }
+                    else {
+                        clearInterval(this._int);
+                        this._end = String(videojs('#player').currentTime().toFixed(1));
+                        console.log(this._end);
+                        videojs('#player').pause();
+                    }
+                    this._shareURL = 'http://www.youtube.com/v/' + this._vidId + '?start=' + this._start + '&end=' + this._end + '&autoplay=1';
+                    // check if _shareURLIsReady is worth showing (i.e. is anything still undefined)
+                    if (this._shareURL.search("undefined") > -1) {
+                        this._shareURLIsReady = false;
+                    }
+                    else {
+                        this._shareURLIsReady = true;
+                    }
+                    console.log(this._shareURL);
+                };
+                Editor.prototype.endBtnClicked = function (event) {
+                    console.log('end');
+                    clearInterval(this._int);
+                    this._end = 'end=' + String(videojs('#player').currentTime().toFixed(1));
+                    console.log(this._end);
+                };
+                Editor.prototype.startBtnClicked = function (event) {
+                    console.log(this._ref);
+                    console.log('start');
+                    this._start = 'start=' + String(videojs('#player').currentTime().toFixed(1));
+                    this._int = setInterval(function () {
+                        this._end = 'end=' + String(videojs('#player').currentTime().toFixed(1));
+                        $('#endTime').val(this._end); //temp fix
+                        //this.ref.markForCheck();
+                        // console.log(this._end)
+                    }, 66);
+                };
+                Editor.prototype.updateEnd = function () {
+                    console.log(String(videojs('#player').currentTime().toFixed(1)));
                 };
                 Editor.prototype.bigRedClicked = function (event) {
                     //$('#moveiplayer').loadVideo();
@@ -56,7 +108,9 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                     else {
                         this._end = 'end=' + Math.round(videojs('#player').currentTime());
                     }
-                    this._shareURL = 'http://localhost:3000/consumer?id=' + this._vidId + this._start + '&' + this._end + '&version=3.0';
+                    //this._shareURL = 'http://localhost:3000/consumer?id='+this._vidId + this._start + '&' + this._end +'&version=3.0';
+                    this._shareURL = 'http://www.youtube.com/embed/' + this._vidId + '?start=' + this._start + '&end=' + this._end + '&autoplay=1';
+                    //'http://www.youtube.com/embed/'+this._vidId+'?start='+this._start+'&end='+this._end+'&autoplay=1'
                     // check if _shareURLIsReady is worth showing (i.e. is anything still undefined)
                     if (this._shareURL.search("undefined") > -1) {
                         this._shareURLIsReady = false;
@@ -83,10 +137,11 @@ System.register(['angular2/core', './search.component2', './bigred.component', '
                 Editor = __decorate([
                     core_1.Component({
                         selector: 'my-editor',
-                        directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred_component_1.BigRedButton, social_component_1.Social, copybox_component_1.CopyBox],
-                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n        <big-red-button (clicked)=\"bigRedClicked($event)\"></big-red-button>\n    </div>\n    \n    <yt-player [vidId]=\"_vidId\" #movieplayer></yt-player>\n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n    \n     \n   "
+                        changeDetection: core_1.ChangeDetectionStrategy.Default,
+                        directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred2_component_1.BigRedButton, social_component_1.Social, copybox_component_1.CopyBox],
+                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n    </div>\n    \n    <yt-player [vidId]=\"_vidId\" #movieplayer></yt-player>\n    <big-red-button \n    [start]=\"_start\" \n    [end]=\"_end\" \n    (everyFiveSeconds)=\"everyFiveSeconds()\" \n    (startBtnClicked)=\"startBtnClicked()\" \n    (endBtnClicked)=\"endBtnClicked()\"\n    (recordBtnClicked)=\"recordBtnClicked()\">\n    </big-red-button>\n    \n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n   "
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.ChangeDetectorRef])
                 ], Editor);
                 return Editor;
             }());

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './editor.component', './consumer.component', './social.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './editor.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './editor.component', './co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, editor_component_1, consumer_component_1, social_component_1;
+    var core_1, router_1, editor_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,12 +22,6 @@ System.register(['angular2/core', 'angular2/router', './editor.component', './co
             },
             function (editor_component_1_1) {
                 editor_component_1 = editor_component_1_1;
-            },
-            function (consumer_component_1_1) {
-                consumer_component_1 = consumer_component_1_1;
-            },
-            function (social_component_1_1) {
-                social_component_1 = social_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -36,8 +30,8 @@ System.register(['angular2/core', 'angular2/router', './editor.component', './co
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n   <div id=\"top-bar\"></div>\n   <a [routerLink]=\"['Editor']\">Editor</a>\n   \n   <router-outlet></router-outlet>\n   \n   ",
-                        directives: [router_1.ROUTER_DIRECTIVES, social_component_1.Social],
+                        template: "\n   \n   <router-outlet></router-outlet>\n   \n   ",
+                        directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [router_1.ROUTER_PROVIDERS]
                     }),
                     router_1.RouteConfig([
@@ -50,11 +44,6 @@ System.register(['angular2/core', 'angular2/router', './editor.component', './co
                             path: '/editor',
                             name: 'Editor',
                             component: editor_component_1.Editor
-                        },
-                        {
-                            path: '/consumer',
-                            name: 'Consumer',
-                            component: consumer_component_1.Consumer
                         }
                     ]), 
                     __metadata('design:paramtypes', [])

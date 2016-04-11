@@ -45,7 +45,6 @@ export class Search  {
     itemClicked(event) {
         event.preventDefault();
         console.log(event.currentTarget);
-        
         this.resultClicked.next(event.currentTarget);
     }
 }
