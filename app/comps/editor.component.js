@@ -41,7 +41,6 @@ System.register(['angular2/core', './search.component2', './bigred2.component', 
                     this._vidId = this.getQueryStringValue('id');
                     this._ref = ref;
                 }
-                Editor.prototype.everyFiveSeconds = function () { console.log('five seconds'); };
                 Editor.prototype.toggleSearch = function (event) {
                     event.preventDefault();
                     //hide / show searchBox component
@@ -56,7 +55,7 @@ System.register(['angular2/core', './search.component2', './bigred2.component', 
                         this._start = String(videojs('#player').currentTime().toFixed(1));
                         this._int = setInterval(function () {
                             this._end = String(videojs('#player').currentTime().toFixed(1));
-                            $('#endTime').val(this._end); //temp fix
+                            $('#endTime').val(this._end); //BAD temp fix !!!!!!!!!!!!!!!!
                             //this.ref.markForCheck();
                             console.log(this._end);
                         }, 100);
@@ -134,12 +133,20 @@ System.register(['angular2/core', './search.component2', './bigred2.component', 
                 Editor.prototype.getQueryStringValue = function (key) {
                     return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
                 };
+                Editor.prototype.ngAfterViewChecked = function () {
+                    //console.log(this._ref);
+                    //this._ref.markForCheck();
+                    // if (this.callback && this.clicked) {
+                    //     console.log("changing status ...");
+                    //     this.callback(Math.random());
+                    // }
+                };
                 Editor = __decorate([
                     core_1.Component({
                         selector: 'my-editor',
                         changeDetection: core_1.ChangeDetectionStrategy.Default,
                         directives: [search_component2_1.Search, ytplayer_component_1.YTPlayer, bigred2_component_1.BigRedButton, social_component_1.Social, copybox_component_1.CopyBox],
-                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n    </div>\n    \n    <yt-player [vidId]=\"_vidId\" #movieplayer></yt-player>\n    <big-red-button \n    [start]=\"_start\" \n    [end]=\"_end\" \n    (everyFiveSeconds)=\"everyFiveSeconds()\" \n    (startBtnClicked)=\"startBtnClicked()\" \n    (endBtnClicked)=\"endBtnClicked()\"\n    (recordBtnClicked)=\"recordBtnClicked()\">\n    </big-red-button>\n    \n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n   "
+                        template: "\n    \n    \n    <div id=\"edit-controls\">\n        <a href=\"#\" class=\"search\" (click)=\"toggleSearch($event)\"><span class=\"icon-search\"></span></a>\n    </div>\n    \n    <yt-player [vidId]=\"_vidId\" #movieplayer></yt-player>\n    <big-red-button \n    [start]=\"_start\" \n    [end]=\"_end\"\n    (startBtnClicked)=\"startBtnClicked()\" \n    (endBtnClicked)=\"endBtnClicked()\"\n    (recordBtnClicked)=\"recordBtnClicked()\">\n    </big-red-button>\n    \n    <copy-box [shareURL]=\"_shareURL\" [shareURLIsReady]=\"_shareURLIsReady\"></copy-box>\n    <social [shareURL]=\"_shareURL\"></social>\n    \n    <search id=\"searchBox\" (^click)=\"searchResultClicked($event)\" (resultClicked)=\"searchResultClicked($event)\"></search>\n   "
                     }), 
                     __metadata('design:paramtypes', [core_1.ChangeDetectorRef])
                 ], Editor);

@@ -50,8 +50,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 YTPlayer = __decorate([
                     core_1.Component({
                         selector: 'yt-player',
-                        template: "\n  <div class=\"player-container\">\n    <video\n        id=\"player\"\n        class=\"video-js vjs-default-skin\"\n        controls \n        width=\"640\" height=\"264\"\n        poster=\"media/clipper-logo-play-hires\" \n        data-setup='{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"https://www.youtube.com/watch?v=PaOYzsZdt5c\"}] }'\n    >\n    </video>\n  </div>\n  ",
-                        styles: ["\n    .player-dimensions{\n        width:100%;/*override videojs style which fixed width at 640px*/\n        max-width:640px;\n        margin:0 auto;\n    }\n  "],
+                        template: "\n  <div class=\"player-container\">\n    <video\n        id=\"player\"\n        class=\"video-js vjs-default-skin\"\n        controls \n      \n        poster=\"media/clipper-logo-play-hires\" \n        data-setup='{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"https://www.youtube.com/watch?v=PaOYzsZdt5c\"}] }'\n    >\n    </video>\n  </div>\n  ",
+                        styles: ["\n    .player-dimensions{\n        \n    }\n  "],
                     }), 
                     __metadata('design:paramtypes', [core_1.ElementRef])
                 ], YTPlayer);

@@ -28,7 +28,7 @@ export class Search  {
    
   search = new Control();
   results: Observable<any>;
-  constructor(public youtube:YouTubeAPI) {
+  constructor(private youtube:YouTubeAPI) {
    //observable of results
    this.results = 
    //input value change observable

@@ -21,7 +21,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             BigRedButton = (function () {
                 function BigRedButton() {
                     this.isRecording = false;
-                    this.five5Secs = new core_1.EventEmitter();
                     this.startClicked = new core_1.EventEmitter();
                     this.endClicked = new core_1.EventEmitter();
                     this.recordClicked = new core_1.EventEmitter();
@@ -42,7 +41,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     }
                 };
                 BigRedButton.prototype.ngOnChanges = function (changes) {
-                    console.log(changes);
+                    console.log('DDD' + changes);
+                };
+                BigRedButton.prototype.ngAfterViewChecked = function () {
+                    //console.log(this.end);
+                    // if (this.callback && this.clicked) {
+                    //     console.log("changing status ...");
+                    //     this.callback(Math.random());
+                    // }
                 };
                 __decorate([
                     core_1.Input(), 
@@ -52,10 +58,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', String)
                 ], BigRedButton.prototype, "end", void 0);
-                __decorate([
-                    core_1.Output('everyFiveSeconds'), 
-                    __metadata('design:type', Object)
-                ], BigRedButton.prototype, "five5Secs", void 0);
                 __decorate([
                     core_1.Output('startBtnClicked'), 
                     __metadata('design:type', Object)

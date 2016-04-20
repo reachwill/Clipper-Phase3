@@ -1,4 +1,4 @@
-import { Component,ChangeDetectionStrategy, ChangeDetectorRef }       from 'angular2/core';
+import { Component,ChangeDetectionStrategy, ChangeDetectorRef,AfterViewChecked } from 'angular2/core';
 import { Search } from './search.component2';
 import {BigRedButton} from './bigred2.component';
 import {YTPlayer} from './ytplayer.component';
@@ -18,8 +18,7 @@ import {CopyBox} from './copybox.component';
     <yt-player [vidId]="_vidId" #movieplayer></yt-player>
     <big-red-button 
     [start]="_start" 
-    [end]="_end" 
-    (everyFiveSeconds)="everyFiveSeconds()" 
+    [end]="_end"
     (startBtnClicked)="startBtnClicked()" 
     (endBtnClicked)="endBtnClicked()"
     (recordBtnClicked)="recordBtnClicked()">
@@ -53,7 +52,7 @@ export class Editor {
         
    }
     
-   everyFiveSeconds() { console.log('five seconds'); }
+  
     
     toggleSearch(event){
         event.preventDefault();
@@ -72,7 +71,7 @@ export class Editor {
             this._start = String(videojs('#player').currentTime().toFixed(1));
             this._int=setInterval(function(){
                 this._end = String(videojs('#player').currentTime().toFixed(1));
-                $('#endTime').val(this._end)//temp fix
+                $('#endTime').val(this._end)//BAD temp fix !!!!!!!!!!!!!!!!
                     //this.ref.markForCheck();
                 console.log(this._end)
                 },100);
@@ -157,5 +156,14 @@ export class Editor {
     
     getQueryStringValue (key) {  
         return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+    }
+    
+     ngAfterViewChecked() {
+        //console.log(this._ref);
+        //this._ref.markForCheck();
+        // if (this.callback && this.clicked) {
+        //     console.log("changing status ...");
+        //     this.callback(Math.random());
+        // }
     } 
 }

@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter, Input, OnChanges} from 'angular2/core';
+import {Component, Output, EventEmitter, Input, OnChanges,AfterViewChecked} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 
 @Component({
@@ -35,7 +35,7 @@ export class BigRedButton  {
      @Input() start: string;
      @Input() end: string;
     
-     @Output('everyFiveSeconds') five5Secs = new EventEmitter();
+     
      @Output('startBtnClicked') startClicked = new EventEmitter(); 
      @Output('endBtnClicked') endClicked = new EventEmitter();
      @Output('recordBtnClicked') recordClicked = new EventEmitter();
@@ -54,8 +54,16 @@ export class BigRedButton  {
     }
     
     ngOnChanges(changes) {
-      console.log(changes);
-  }
+      console.log('DDD'+changes);
+    }
+    
+    ngAfterViewChecked() {
+        //console.log(this.end);
+        // if (this.callback && this.clicked) {
+        //     console.log("changing status ...");
+        //     this.callback(Math.random());
+        // }
+    }
     
     
 }
